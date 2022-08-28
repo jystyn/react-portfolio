@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:server": "nodemon ./server/server.js",
+    "dev:client": "cd ./client && npm start",
+    "start": "cd ./server && npm start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jystyn/react-portfolio/issues"
   },
-  "homepage": "https://github.com/jystyn/react-portfolio#readme"
+  "homepage": "https://github.com/jystyn/react-portfolio#readme",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
 }
